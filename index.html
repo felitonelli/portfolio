@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===== SEO básico ===== -->
+  <title>Felipe Tonelli · Desarrollo web &amp; análisis de datos</title>
+  <meta name="description" content="Felipe Tonelli, de Paraná, Entre Ríos. Desarrollo de sitios web y análisis de datos con Power BI, SQL y Excel. Proyectos, servicios y contacto.">
+  <meta name="author" content="Felipe Tonelli">
+  <meta name="theme-color" content="#0b1220">
+  <!-- [COMPLETAR: URL final del sitio si no usás felitonelli.github.io] -->
+  <link rel="canonical" href="https://felitonelli.github.io/">
+
+  <!-- ===== Open Graph (cómo se ve el link al compartirlo) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Felipe Tonelli · Desarrollo web &amp; análisis de datos">
+  <meta property="og:description" content="Sitios web rápidos y tableros de datos que se entienden a la primera. Proyectos, servicios y contacto.">
+  <meta property="og:url" content="https://felitonelli.github.io/">
+  <meta property="og:image" content="https://felitonelli.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Felipe Tonelli — Desarrollo web y análisis de datos">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ===== Ícono y fuentes ===== -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Marca que hay JavaScript (activa las animaciones de aparición) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- Datos de proyectos primero, después la lógica -->
+  <script src="js/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===== Encabezado ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="Felipe Tonelli, ir al inicio">
+        <span class="logo__bracket">&lt;</span>ft<span class="logo__bracket"> /&gt;</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav aria-label="Principal">
+        <ul class="nav" id="menu">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#proceso">Cómo trabajo</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="nav__cta" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===== Portada ===== -->
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="kicker">Felipe Tonelli · Paraná, Entre Ríos</p>
+          <h1 class="hero__title">De los datos<br><span class="accent">a la web.</span></h1>
+          <p class="hero__lead">
+            Desarrollo web y análisis de datos. Armo sitios rápidos y tableros que se entienden a la primera.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#contacto">Hablemos</a>
+          </div>
+        </div>
+
+        <!-- Visual decorativo: tablero de ejemplo + consulta SQL (los números son ilustrativos) -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="dash">
+            <div class="dash__bar">
+              <span></span><span></span><span></span>
+              <p>tablero-demo</p>
+            </div>
+            <div class="dash__kpis">
+              <div class="kpi">
+                <p class="kpi__label">Ventas</p>
+                <p class="kpi__value">$ 4,2 M</p>
+                <p class="kpi__delta">▲ 12%</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi__label">Pedidos</p>
+                <p class="kpi__value">1.284</p>
+                <p class="kpi__delta">▲ 8%</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi__label">Ticket prom.</p>
+                <p class="kpi__value">$ 3.270</p>
+                <p class="kpi__delta kpi__delta--down">▼ 2%</p>
+              </div>
+            </div>
+            <div class="dash__chart">
+              <p class="dash__title">Ventas por mes</p>
+              <div class="bars">
+                <span style="--h:38%"></span><span style="--h:46%"></span><span style="--h:41%"></span>
+                <span style="--h:55%"></span><span style="--h:52%"></span><span style="--h:63%"></span>
+                <span style="--h:58%"></span><span style="--h:70%"></span><span style="--h:66%"></span>
+                <span style="--h:78%"></span><span style="--h:84%"></span><span style="--h:92%"></span>
+              </div>
+            </div>
+          </div>
+<pre class="snippet"><code><span class="tk-key">SELECT</span> mes, <span class="tk-fn">SUM</span>(total) <span class="tk-key">AS</span> ventas
+<span class="tk-key">FROM</span> pedidos
+<span class="tk-key">GROUP BY</span> mes;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Presentación ===== -->
+    <section class="intro" aria-label="Presentación">
+      <div class="container">
+        <p class="statement reveal">
+          Trabajo con datos todos los días como analista y estudio programación en la UTN.
+          <span class="soft">Uno las dos cosas para armar webs y tableros simples, rápidos y fáciles de usar.</span>
+        </p>
+        <dl class="facts reveal">
+          <div><dt>Trabajo</dt><dd>Analista · SanCor Salud</dd></div>
+          <div><dt>Estudio</dt><dd>Programación · UTN FRP</dd></div>
+          <div><dt>Base</dt><dd>Paraná, Entre Ríos</dd></div>
+          <div><dt>Foco</dt><dd>Datos &amp; web</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== 01 Servicios ===== -->
+    <section class="section" id="servicios" aria-labelledby="titulo-servicios">
+      <div class="container">
+        <p class="label reveal"><span>01</span> Servicios</p>
+        <h2 id="titulo-servicios" class="section__title reveal">Dos oficios. <span class="soft">Un mismo objetivo.</span></h2>
+
+        <!-- Textos editables: ajustalos a lo que querés ofrecer -->
+        <div class="services">
+          <article class="service reveal">
+            <p class="service__num">01 · Desarrollo web</p>
+            <h3 class="service__title">Que tu negocio se encuentre y se entienda.</h3>
+            <p class="service__desc">
+              Sitios y landing pages a medida, rápidos, que se ven bien en el celular y son fáciles de actualizar.
+            </p>
+            <ul class="tags">
+              <li>Diseño a medida</li>
+              <li>Responsive</li>
+              <li>SEO básico</li>
+              <li>Publicación</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <p class="service__num">02 · Análisis de datos</p>
+            <h3 class="service__title">Que los números cuenten algo.</h3>
+            <p class="service__desc">
+              Tableros en Power BI y reportes en Excel a partir de tus datos, para ver de un vistazo qué está pasando y decidir mejor.
+            </p>
+            <ul class="tags">
+              <li>Limpieza de datos</li>
+              <li>Consultas SQL</li>
+              <li>Tableros Power BI</li>
+              <li>Reportes en Excel</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 Proyectos (se generan desde js/projects.js) ===== -->
+    <section class="section section--line" id="proyectos" aria-labelledby="titulo-proyectos">
+      <div class="container">
+        <p class="label reveal"><span>02</span> Proyectos</p>
+        <h2 id="titulo-proyectos" class="section__title reveal">Trabajo real, <span class="soft">de punta a punta.</span></h2>
+
+        <div class="cases" id="lista-proyectos">
+          <!-- main.js completa este contenedor -->
+        </div>
+        <noscript>
+          <p class="note">Activá JavaScript para ver los proyectos, o visitá mi
+            <a href="https://github.com/felitonelli">GitHub</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ===== 03 Cómo trabajo ===== -->
+    <section class="section section--alt" id="proceso" aria-labelledby="titulo-proceso">
+      <div class="container">
+        <p class="label reveal"><span>03</span> Cómo trabajo</p>
+        <h2 id="titulo-proceso" class="section__title reveal">De la idea a la entrega, <span class="soft">en tres pasos.</span></h2>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <p class="step__num">01</p>
+            <h3 class="step__title">Escucho</h3>
+            <p class="step__desc">Charlamos qué necesitás, para quién es y qué querés lograr.</p>
+          </li>
+          <li class="step reveal">
+            <p class="step__num">02</p>
+            <h3 class="step__title">Construyo</h3>
+            <p class="step__desc">Diseño y desarrollo la web o el tablero, y te muestro avances para ajustar sobre la marcha.</p>
+          </li>
+          <li class="step reveal">
+            <p class="step__num">03</p>
+            <h3 class="step__title">Entrego</h3>
+            <p class="step__desc">Lo publico, te explico cómo usarlo y lo dejo listo para que lo puedas mantener.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 04 Sobre mí ===== -->
+    <section class="section" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="container">
+        <p class="label reveal"><span>04</span> Sobre mí</p>
+        <h2 id="titulo-sobre-mi" class="visually-hidden">Sobre mí</h2>
+
+        <div class="about">
+          <blockquote class="quote reveal">
+            <!-- [COMPLETAR: una frase propia que te represente] -->
+            <p>“[COMPLETAR: una frase tuya que te represente]”</p>
+          </blockquote>
+
+          <div class="about__body reveal">
+            <p>
+              Soy Felipe, de Paraná, Entre Ríos. Estudio la Tecnicatura Universitaria en Programación
+              en la UTN Facultad Regional Paraná y trabajo como Analista en SanCor Salud, donde configuro
+              sistemas y analizo datos de procesos internos.
+            </p>
+            <p>
+              Lo que más me gusta es encontrar respuestas en los datos y construir páginas web que
+              funcionen bien y se entiendan a la primera.
+            </p>
+            <dl class="facts facts--compact">
+              <div><dt>Base</dt><dd>Paraná, Entre Ríos</dd></div>
+              <div><dt>Egreso</dt><dd>2027 · UTN FRP</dd></div>
+              <div><dt>Intereses</dt><dd>Datos · Desarrollo web</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 Stack ===== -->
+    <section class="section section--line" id="stack" aria-labelledby="titulo-stack">
+      <div class="container">
+        <p class="label reveal"><span>05</span> Stack</p>
+        <h2 id="titulo-stack" class="section__title reveal">Con qué trabajo.</h2>
+
+        <dl class="stack">
+          <div class="stack__row reveal">
+            <dt>Datos</dt>
+            <dd><ul class="tags"><li>SQL</li><li>Power BI</li><li>Excel</li></ul></dd>
+          </div>
+          <div class="stack__row reveal">
+            <dt>Desarrollo</dt>
+            <dd><ul class="tags"><li>C#</li><li>POO</li><li>JavaScript</li><li>HTML / CSS</li></ul></dd>
+          </div>
+          <div class="stack__row reveal">
+            <dt>Bases de datos</dt>
+            <dd><ul class="tags"><li>SQL (relacionales)</li><li>NoSQL</li></ul></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== 06 Formación ===== -->
+    <section class="section section--line" id="formacion" aria-labelledby="titulo-formacion">
+      <div class="container">
+        <p class="label reveal"><span>06</span> Formación</p>
+        <h2 id="titulo-formacion" class="section__title reveal">Formación.</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <p class="timeline__date">En curso · egreso 2027</p>
+            <div>
+              <h3 class="timeline__title">Tecnicatura Universitaria en Programación</h3>
+              <p class="timeline__place">UTN — Facultad Regional Paraná</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <p class="timeline__date">[COMPLETAR: año]</p>
+            <div>
+              <h3 class="timeline__title">Desarrollo Web</h3>
+              <p class="timeline__place">Coderhouse · <a href="#">[COMPLETAR: link al certificado]</a></p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <p class="timeline__date">[COMPLETAR: año]</p>
+            <div>
+              <h3 class="timeline__title">Data Analytics</h3>
+              <p class="timeline__place">[COMPLETAR: institución] · <a href="#">[COMPLETAR: link al certificado]</a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Contacto ===== -->
+    <section class="contact" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <p class="label reveal">Agenda abierta</p>
+        <h2 id="titulo-contacto" class="contact__title reveal">Hablemos de <span class="accent">tu proyecto.</span></h2>
+        <p class="contact__lead reveal">
+          Contame qué necesitás y te digo por dónde empezar.
+        </p>
+        <ul class="contact__links reveal">
+          <li>
+            <!-- [COMPLETAR: reemplazá tu-email@ejemplo.com por tu email (en los dos lugares)] -->
+            <a class="btn btn--primary btn--lg" href="mailto:tu-email@ejemplo.com">Escribime un email</a>
+          </li>
+          <li>
+            <a class="btn btn--ghost btn--lg" href="https://www.linkedin.com/in/felipe-tonelli-555285283" target="_blank" rel="noopener noreferrer">
+              LinkedIn <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+            </a>
+          </li>
+          <li>
+            <a class="btn btn--ghost btn--lg" href="https://github.com/felitonelli" target="_blank" rel="noopener noreferrer">
+              GitHub <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+            </a>
+          </li>
+        </ul>
+        <p class="contact__mail reveal">tu-email@ejemplo.com</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="anio">2026</span> Felipe Tonelli</p>
+      <p class="mono">Hecho con HTML, CSS y JavaScript</p>
+    </div>
+  </footer>
+</body>
+</html>

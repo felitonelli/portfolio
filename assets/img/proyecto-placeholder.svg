@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <!-- Imagen provisoria: reemplazala por una captura real del proyecto -->
+  <rect width="1600" height="900" fill="#0e1627"/>
+  <g fill="none" stroke="#1a2438" stroke-width="2">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+  <text x="800" y="470" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="96" fill="#38bdf8">&lt;/&gt;</text>
+  <text x="800" y="560" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="34" fill="#94a3b8">[COMPLETAR: captura del proyecto]</text>
+</svg>
