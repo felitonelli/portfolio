@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ===== SEO básico ===== -->
-  <title>Felipe Tonelli · Desarrollo web &amp; análisis de datos</title>
-  <meta name="description" content="Felipe Tonelli, de Paraná, Entre Ríos. Desarrollo de sitios web y análisis de datos con Power BI, SQL y Excel. Proyectos, servicios y contacto.">
+  <title>Felipe Tonelli · Landing pages para negocios</title>
+  <meta name="description" content="Felipe Tonelli, de Paraná, Entre Ríos. Diseño y desarrollo landing pages rápidas, pensadas para el celular y con consulta directa por WhatsApp. También análisis de datos con Power BI, SQL y Excel.">
   <meta name="author" content="Felipe Tonelli">
   <meta name="theme-color" content="#0b1220">
-  <!-- [COMPLETAR: URL final del sitio si no usás felitonelli.github.io] -->
-  <link rel="canonical" href="https://felitonelli.github.io/">
+  <!-- [COMPLETAR: si la dirección final del sitio no es felipe-tonelli.vercel.app, cambiala acá y en og:url / og:image] -->
+  <link rel="canonical" href="https://felipe-tonelli.vercel.app/">
 
   <!-- ===== Open Graph (cómo se ve el link al compartirlo) ===== -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Felipe Tonelli · Desarrollo web &amp; análisis de datos">
-  <meta property="og:description" content="Sitios web rápidos y tableros de datos que se entienden a la primera. Proyectos, servicios y contacto.">
-  <meta property="og:url" content="https://felitonelli.github.io/">
-  <meta property="og:image" content="https://felitonelli.github.io/assets/img/og-image.png">
+  <meta property="og:title" content="Felipe Tonelli · Landing pages para negocios">
+  <meta property="og:description" content="Landing pages rápidas, pensadas para el celular y con consulta directa por WhatsApp. Mirá los proyectos.">
+  <meta property="og:url" content="https://felipe-tonelli.vercel.app/">
+  <meta property="og:image" content="https://felipe-tonelli.vercel.app/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Felipe Tonelli — Desarrollo web y análisis de datos">
+  <meta property="og:image:alt" content="Felipe Tonelli — Landing pages para negocios">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- ===== Ícono y fuentes ===== -->
@@ -72,9 +72,10 @@
       <div class="container hero__grid">
         <div class="hero__text">
           <p class="kicker">Felipe Tonelli · Paraná, Entre Ríos</p>
-          <h1 class="hero__title">De los datos<br><span class="accent">a la web.</span></h1>
+          <h1 class="hero__title">Landing pages que <span class="accent">traen consultas.</span></h1>
           <p class="hero__lead">
-            Desarrollo web y análisis de datos. Armo sitios rápidos y tableros que se entienden a la primera.
+            Diseño y desarrollo sitios de una página para alojamientos, comercios y profesionales:
+            rápidos, pensados para el celular y con consulta directa por WhatsApp.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
@@ -82,43 +83,20 @@
           </div>
         </div>
 
-        <!-- Visual decorativo: tablero de ejemplo + consulta SQL (los números son ilustrativos) -->
-        <div class="hero__visual" aria-hidden="true">
-          <div class="dash">
-            <div class="dash__bar">
+        <!-- Visual: capturas reales de dos proyectos (escritorio + celular) -->
+        <div class="hero__visual">
+          <figure class="frame hero__desk">
+            <div class="frame__bar" aria-hidden="true">
               <span></span><span></span><span></span>
-              <p>tablero-demo</p>
+              <p class="frame__url">360-cumbre.vercel.app</p>
             </div>
-            <div class="dash__kpis">
-              <div class="kpi">
-                <p class="kpi__label">Ventas</p>
-                <p class="kpi__value">$ 4,2 M</p>
-                <p class="kpi__delta">▲ 12%</p>
-              </div>
-              <div class="kpi">
-                <p class="kpi__label">Pedidos</p>
-                <p class="kpi__value">1.284</p>
-                <p class="kpi__delta">▲ 8%</p>
-              </div>
-              <div class="kpi">
-                <p class="kpi__label">Ticket prom.</p>
-                <p class="kpi__value">$ 3.270</p>
-                <p class="kpi__delta kpi__delta--down">▼ 2%</p>
-              </div>
-            </div>
-            <div class="dash__chart">
-              <p class="dash__title">Ventas por mes</p>
-              <div class="bars">
-                <span style="--h:38%"></span><span style="--h:46%"></span><span style="--h:41%"></span>
-                <span style="--h:55%"></span><span style="--h:52%"></span><span style="--h:63%"></span>
-                <span style="--h:58%"></span><span style="--h:70%"></span><span style="--h:66%"></span>
-                <span style="--h:78%"></span><span style="--h:84%"></span><span style="--h:92%"></span>
-              </div>
-            </div>
-          </div>
-<pre class="snippet"><code><span class="tk-key">SELECT</span> mes, <span class="tk-fn">SUM</span>(total) <span class="tk-key">AS</span> ventas
-<span class="tk-key">FROM</span> pedidos
-<span class="tk-key">GROUP BY</span> mes;</code></pre>
+            <img src="assets/img/proyectos/360-escritorio.webp" width="1600" height="1000"
+                 alt="Landing page de Cabañas 360 Cumbre en una computadora">
+          </figure>
+          <figure class="phone hero__phone">
+            <img src="assets/img/proyectos/naranjos-celular.webp" width="450" height="975"
+                 alt="Landing page de Cabañas Los Naranjos en un celular">
+          </figure>
         </div>
       </div>
     </section>
@@ -127,14 +105,15 @@
     <section class="intro" aria-label="Presentación">
       <div class="container">
         <p class="statement reveal">
-          Trabajo con datos todos los días como analista y estudio programación en la UTN.
-          <span class="soft">Uno las dos cosas para armar webs y tableros simples, rápidos y fáciles de usar.</span>
+          Una buena landing page hace una sola cosa: que quien llega desde Instagram o Google entienda
+          qué ofrecés y te escriba.
+          <span class="soft">Las diseño a medida, las publico y las dejo fáciles de actualizar.</span>
         </p>
         <dl class="facts reveal">
+          <div><dt>Hago</dt><dd>Landing pages · Datos</dd></div>
           <div><dt>Trabajo</dt><dd>Analista · SanCor Salud</dd></div>
           <div><dt>Estudio</dt><dd>Programación · UTN FRP</dd></div>
           <div><dt>Base</dt><dd>Paraná, Entre Ríos</dd></div>
-          <div><dt>Foco</dt><dd>Datos &amp; web</dd></div>
         </dl>
       </div>
     </section>
@@ -143,19 +122,22 @@
     <section class="section" id="servicios" aria-labelledby="titulo-servicios">
       <div class="container">
         <p class="label reveal"><span>01</span> Servicios</p>
-        <h2 id="titulo-servicios" class="section__title reveal">Dos oficios. <span class="soft">Un mismo objetivo.</span></h2>
+        <h2 id="titulo-servicios" class="section__title reveal">Lo que hago. <span class="soft">Simple y a medida.</span></h2>
 
         <!-- Textos editables: ajustalos a lo que querés ofrecer -->
         <div class="services">
-          <article class="service reveal">
-            <p class="service__num">01 · Desarrollo web</p>
-            <h3 class="service__title">Que tu negocio se encuentre y se entienda.</h3>
+          <article class="service service--main reveal">
+            <p class="service__num">01 · Landing pages</p>
+            <h3 class="service__title">Que quien llega, consulte.</h3>
             <p class="service__desc">
-              Sitios y landing pages a medida, rápidos, que se ven bien en el celular y son fáciles de actualizar.
+              Sitios de una página con todo lo que tu cliente necesita saber antes de escribirte:
+              qué ofrecés, fotos, precios, preguntas frecuentes y cómo llegar. Con un formulario que
+              arma el mensaje de WhatsApp con los datos ya cargados.
             </p>
             <ul class="tags">
               <li>Diseño a medida</li>
-              <li>Responsive</li>
+              <li>Celular primero</li>
+              <li>Consulta por WhatsApp</li>
               <li>SEO básico</li>
               <li>Publicación</li>
             </ul>
@@ -183,6 +165,9 @@
       <div class="container">
         <p class="label reveal"><span>02</span> Proyectos</p>
         <h2 id="titulo-proyectos" class="section__title reveal">Trabajo real, <span class="soft">de punta a punta.</span></h2>
+        <p class="section__intro reveal">
+          Propuestas de landing page para alojamientos de Entre Ríos y Córdoba, hechas para presentarles a sus dueños.
+        </p>
 
         <div class="cases" id="lista-proyectos">
           <!-- main.js completa este contenedor -->
@@ -198,23 +183,24 @@
     <section class="section section--alt" id="proceso" aria-labelledby="titulo-proceso">
       <div class="container">
         <p class="label reveal"><span>03</span> Cómo trabajo</p>
-        <h2 id="titulo-proceso" class="section__title reveal">De la idea a la entrega, <span class="soft">en tres pasos.</span></h2>
+        <h2 id="titulo-proceso" class="section__title reveal">Primero la ves, <span class="soft">después decidís.</span></h2>
 
+        <!-- Textos editables: ajustalos a cómo trabajás con cada cliente -->
         <ol class="steps">
           <li class="step reveal">
             <p class="step__num">01</p>
-            <h3 class="step__title">Escucho</h3>
-            <p class="step__desc">Charlamos qué necesitás, para quién es y qué querés lograr.</p>
+            <h3 class="step__title">Propuesta</h3>
+            <p class="step__desc">Armo una propuesta con la información pública de tu negocio para que veas cómo quedaría tu página, antes de cerrar nada.</p>
           </li>
           <li class="step reveal">
             <p class="step__num">02</p>
-            <h3 class="step__title">Construyo</h3>
-            <p class="step__desc">Diseño y desarrollo la web o el tablero, y te muestro avances para ajustar sobre la marcha.</p>
+            <h3 class="step__title">Ajustes</h3>
+            <p class="step__desc">Completamos juntos lo que falta: fotos propias, precios, textos y los detalles que solo vos sabés.</p>
           </li>
           <li class="step reveal">
             <p class="step__num">03</p>
-            <h3 class="step__title">Entrego</h3>
-            <p class="step__desc">Lo publico, te explico cómo usarlo y lo dejo listo para que lo puedas mantener.</p>
+            <h3 class="step__title">Publicación</h3>
+            <p class="step__desc">La publico con tu dominio, la dejo lista para aparecer en Google y te explico cómo actualizarla.</p>
           </li>
         </ol>
       </div>
@@ -239,8 +225,8 @@
               sistemas y analizo datos de procesos internos.
             </p>
             <p>
-              Lo que más me gusta es encontrar respuestas en los datos y construir páginas web que
-              funcionen bien y se entiendan a la primera.
+              Hoy me dedico sobre todo a diseñar landing pages para negocios: páginas que funcionen
+              bien, se entiendan a la primera y ayuden a conseguir consultas.
             </p>
             <dl class="facts facts--compact">
               <div><dt>Base</dt><dd>Paraná, Entre Ríos</dd></div>
@@ -260,12 +246,16 @@
 
         <dl class="stack">
           <div class="stack__row reveal">
+            <dt>Web</dt>
+            <dd><ul class="tags"><li>HTML / CSS</li><li>JavaScript</li><li>Astro</li><li>Tailwind CSS</li><li>Keystatic</li><li>Vercel</li></ul></dd>
+          </div>
+          <div class="stack__row reveal">
             <dt>Datos</dt>
             <dd><ul class="tags"><li>SQL</li><li>Power BI</li><li>Excel</li></ul></dd>
           </div>
           <div class="stack__row reveal">
             <dt>Desarrollo</dt>
-            <dd><ul class="tags"><li>C#</li><li>POO</li><li>JavaScript</li><li>HTML / CSS</li></ul></dd>
+            <dd><ul class="tags"><li>C#</li><li>POO</li></ul></dd>
           </div>
           <div class="stack__row reveal">
             <dt>Bases de datos</dt>

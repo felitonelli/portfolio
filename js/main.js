@@ -42,6 +42,13 @@ function crearCaso(proyecto, indice) {
   const info = crearElemento("div", "case__info");
   info.append(crearElemento("p", "case__desc", proyecto.descripcion));
 
+  // Lo que tiene el sitio (opcional)
+  if (proyecto.destacados && proyecto.destacados.length) {
+    const lista = crearElemento("ul", "case__features");
+    proyecto.destacados.forEach((d) => lista.append(crearElemento("li", "", d)));
+    info.append(lista);
+  }
+
   if (proyecto.tecnologias && proyecto.tecnologias.length) {
     const tags = crearElemento("ul", "tags");
     tags.setAttribute("aria-label", "Tecnologías usadas");
@@ -56,9 +63,9 @@ function crearCaso(proyecto, indice) {
 
   head.append(titulos, info);
 
-  /* Captura dentro de un marco de navegador */
-  const frame = crearElemento("figure", "frame reveal");
-  frame.style.margin = "0";
+  /* Capturas: escritorio en marco de navegador + celular (si hay) */
+  const media = crearElemento("div", "case__media reveal");
+  const frame = crearElemento("figure", "frame");
   const bar = crearElemento("div", "frame__bar");
   bar.setAttribute("aria-hidden", "true");
   bar.append(crearElemento("span"), crearElemento("span"), crearElemento("span"));
@@ -68,12 +75,27 @@ function crearCaso(proyecto, indice) {
   img.src = proyecto.imagen;
   img.alt = proyecto.imagenAlt || "";
   img.width = 1600;
-  img.height = 900;
+  img.height = 1000;
   img.loading = "lazy";
   img.decoding = "async";
   frame.append(bar, img);
+  media.append(frame);
 
-  caso.append(head, frame);
+  if (proyecto.imagenMovil) {
+    const phone = crearElemento("figure", "phone");
+    const imgMovil = crearElemento("img");
+    imgMovil.src = proyecto.imagenMovil;
+    imgMovil.alt = `${proyecto.titulo} en el celular`;
+    imgMovil.width = 450;
+    imgMovil.height = 975;
+    imgMovil.loading = "lazy";
+    imgMovil.decoding = "async";
+    phone.append(imgMovil);
+    media.append(phone);
+    media.classList.add("case__media--doble");
+  }
+
+  caso.append(head, media);
 
   /* Métricas (solo si hay) */
   if (proyecto.metricas && proyecto.metricas.length) {
